@@ -18,7 +18,6 @@ class WithVC707UARTHarnessBinder extends OverrideHarnessBinder({
   (system: HasPeripheryUARTModuleImp, th: BaseModule, ports: Seq[UARTPortIO]) => {
     th match {
       case vc707th: VC707HarnessImp => vc707th.vc707Outer.io_uart_bb.bundle <> ports.head
-      case vc707th: VC707woDDRHarnessImp => vc707th.vc707Outer.io_uart_bb.bundle <> ports.head
     }
   }
 })
@@ -28,7 +27,6 @@ class WithVC707SPISDCardHarnessBinder extends OverrideHarnessBinder({
   (system: HasPeripherySPI, th: BaseModule, ports: Seq[SPIPortIO]) => {
     th match {
       case vc707th: VC707HarnessImp => vc707th.vc707Outer.io_spi_bb.bundle <> ports.head
-      case vc707th: VC707woDDRHarnessImp => vc707th.vc707Outer.io_spi_bb.bundle <> ports.head
     }
   }
 })
@@ -47,14 +45,6 @@ class WithVC707JTAGHarnessBinder extends OverrideHarnessBinder({
           jtagIO.TMS := jtagModule.TMS
           jtagIO.TDI := jtagModule.TDI
         }
-        case vc707th: VC707woDDRHarnessImp => {
-          val jtagModule = vc707th.vc707Outer.jtagModule
-          jtagModule.TDO.data := jtagIO.TDO
-          jtagModule.TDO.driven := true.B
-          jtagIO.TCK := jtagModule.TCK
-          jtagIO.TMS := jtagModule.TMS
-          jtagIO.TDI := jtagModule.TDI
-        }
       }
     }
   }
@@ -64,11 +54,6 @@ class WithVC707JTAGHarnessBinder extends OverrideHarnessBinder({
 class WithVC707GPIOHarnessBinder extends OverrideHarnessBinder({
   (system: HasPeripheryGPIOModuleImp, th: BaseModule, ports: Seq[GPIOPortIO]) => {
     th match {
-      case th: VC707woDDRHarnessImp => {
-        (th.vc707Outer.io_gpio_bb zip ports).map{ case (gpio, port) =>
-          gpio.bundle <> port
-        }
-      }
       case th: VC707HarnessImp => {
         (th.vc707Outer.io_gpio_bb zip ports).map{ case (gpio, port) =>
           gpio.bundle <> port
@@ -79,26 +64,26 @@ class WithVC707GPIOHarnessBinder extends OverrideHarnessBinder({
 })
 
 /*** Experimental DDR ***/
-class WithVC707DDRMemHarnessBinder extends OverrideHarnessBinder({
-  (system: CanHaveMasterTLMemPort, th: BaseModule, ports: Seq[HeterogeneousBag[TLBundle]]) => {
-    th match {
-      case vc707th: VC707HarnessImp => {
-        require(ports.size == 1)
+// class WithVC707DDRMemHarnessBinder extends OverrideHarnessBinder({
+//   (system: CanHaveMasterTLMemPort, th: BaseModule, ports: Seq[HeterogeneousBag[TLBundle]]) => {
+//     th match {
+//       case vc707th: VC707HarnessImp => {
+//         require(ports.size == 1)
 
-        val bundles = vc707th.vc707Outer.ddrClient.out.map(_._1)
-        val ddrClientBundle = Wire(new HeterogeneousBag(bundles.map(_.cloneType)))
-        bundles.zip(ddrClientBundle).foreach { case (bundle, io) => bundle <> io }
-        ddrClientBundle <> ports.head
-      }
-    }
-  }
-})
+//         val bundles = vc707th.vc707Outer.ddrClient.out.map(_._1)
+//         val ddrClientBundle = Wire(new HeterogeneousBag(bundles.map(_.cloneType)))
+//         bundles.zip(ddrClientBundle).foreach { case (bundle, io) => bundle <> io }
+//         ddrClientBundle <> ports.head
+//       }
+//     }
+//   }
+// })
 
 /*** Tie off TSI ***/
 class WithTSITieoff extends OverrideHarnessBinder ({
   (system: CanHavePeripheryTLSerial, th: BaseModule, ports: Seq[ClockedIO[SerialIO]]) => {
     th match {
-      case vc707th: VC707woDDRHarnessImp => {
+      case vc707th: VC707HarnessImp => {
         ports.map({ port =>
           val bits = port.bits
           port.clock := vc707th.harnessBinderClock

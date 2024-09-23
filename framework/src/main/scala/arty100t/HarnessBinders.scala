@@ -18,7 +18,6 @@ class WithArty100TUARTHarnessBinder extends OverrideHarnessBinder({
   (system: HasPeripheryUARTModuleImp, th: BaseModule, ports: Seq[UARTPortIO]) => {
     th match {
       case ath: Arty100TDDRHarnessImp => ath.athOuter.io_uart_bb.bundle <> ports.head
-      case ath: Arty100TwoDDRHarnessImp => ath.athOuter.io_uart_bb.bundle <> ports.head
     }
   }
 })
@@ -28,7 +27,6 @@ class WithArty100TSPISDCardHarnessBinder extends OverrideHarnessBinder({
   (system: HasPeripherySPI, th: BaseModule, ports: Seq[SPIPortIO]) => {
     th match {
       case ath: Arty100TDDRHarnessImp => ath.athOuter.io_spi_bb.bundle <> ports.head
-      case ath: Arty100TwoDDRHarnessImp => ath.athOuter.io_spi_bb.bundle <> ports(0)
     }
   }
 })
@@ -47,14 +45,6 @@ class WithArty100TJTAGHarnessBinder extends OverrideHarnessBinder({
             jtagIO.TMS := jtagModule.TMS
             jtagIO.TDI := jtagModule.TDI
           }
-          case ath: Arty100TwoDDRHarnessImp => {
-            val jtagModule = ath.athOuter.jtagModule
-            jtagModule.TDO.data := jtagIO.TDO
-            jtagModule.TDO.driven := true.B
-            jtagIO.TCK := jtagModule.TCK
-            jtagIO.TMS := jtagModule.TMS
-            jtagIO.TDI := jtagModule.TDI
-          }
         }
     }
   }
@@ -64,7 +54,7 @@ class WithArty100TJTAGHarnessBinder extends OverrideHarnessBinder({
 class WithArty100TGPIOHarnessBinder extends OverrideHarnessBinder({
   (system: HasPeripheryGPIOModuleImp, th: BaseModule, ports: Seq[GPIOPortIO]) => {
     th match {
-      case th: Arty100TwoDDRHarnessImp => {
+      case th: Arty100TDDRHarnessImp => {
         (th.athOuter.io_gpio_bb zip ports).map{ case (gpio, port) =>
           gpio.bundle <> port
         }
@@ -74,26 +64,26 @@ class WithArty100TGPIOHarnessBinder extends OverrideHarnessBinder({
 })
 
 /*** Experimental DDR ***/
-class WithArty100TDDRMemHarnessBinder extends OverrideHarnessBinder({
-  (system: CanHaveMasterTLMemPort, th: BaseModule, ports: Seq[HeterogeneousBag[TLBundle]]) => {
-    th match {
-      case ath: Arty100TDDRHarnessImp => {
-        require(ports.size == 1)
+// class WithArty100TDDRMemHarnessBinder extends OverrideHarnessBinder({
+//   (system: CanHaveMasterTLMemPort, th: BaseModule, ports: Seq[HeterogeneousBag[TLBundle]]) => {
+//     th match {
+//       case ath: Arty100TDDRHarnessImp => {
+//         require(ports.size == 1)
 
-        val bundles = ath.athOuter.ddrClient.out.map(_._1)
-        val ddrClientBundle = Wire(new HeterogeneousBag(bundles.map(_.cloneType)))
-        bundles.zip(ddrClientBundle).foreach { case (bundle, io) => bundle <> io }
-        ddrClientBundle <> ports.head
-      }
-    }
-  }
-})
+//         val bundles = ath.athOuter.ddrClient.out.map(_._1)
+//         val ddrClientBundle = Wire(new HeterogeneousBag(bundles.map(_.cloneType)))
+//         bundles.zip(ddrClientBundle).foreach { case (bundle, io) => bundle <> io }
+//         ddrClientBundle <> ports.head
+//       }
+//     }
+//   }
+// })
 
 /*** Tie off TSI ***/
 class WithArty100TTSITieoff extends OverrideHarnessBinder ({
   (system: CanHavePeripheryTLSerial, th: BaseModule, ports: Seq[ClockedIO[SerialIO]]) => {
     th match {
-      case athOuter: Arty100TwoDDRHarnessImp => {
+      case athOuter: Arty100TDDRHarnessImp => {
         ports.map({ port =>
           val bits = port.bits
           port.clock := athOuter.harnessBinderClock
