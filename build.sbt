@@ -307,3 +307,8 @@ lazy val fpga_shells = (project in file("./fpga/fpga-shells"))
 lazy val fpga_platforms = (project in file("./fpga"))
   .dependsOn(chipyard, fpga_shells)
   .settings(commonSettings)
+  
+lazy val framework = (project in file("./framework"))
+  .dependsOn(chipyard, fpga_shells)
+  .settings(commonSettings)
+  
