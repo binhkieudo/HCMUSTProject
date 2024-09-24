@@ -151,6 +151,7 @@ lazy val testchipip = (project in file("generators/testchipip"))
 lazy val chipyard = (project in file("generators/chipyard"))
   .dependsOn(testchipip, rocketchip, boom, hwacha, sifive_blocks, sifive_cache, iocell,
     sha3, // On separate line to allow for cleaner tutorial-setup patches
+    crypto,
     dsptools, `rocket-dsp-utils`,
     gemmini, icenet, tracegen, cva6, nvdla, sodor, ibex, fft_generator,
     constellation, mempress, barf, shuttle)
@@ -312,3 +313,7 @@ lazy val framework = (project in file("./framework"))
   .dependsOn(chipyard, fpga_shells)
   .settings(commonSettings)
   
+lazy val crypto = (project in file("generators/crypto"))
+  .dependsOn(rocketchip, midasTargetUtils)
+  .settings(libraryDependencies ++= rocketLibDeps.value)
+  .settings(commonSettings)

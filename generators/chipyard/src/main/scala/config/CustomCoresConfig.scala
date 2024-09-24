@@ -12,6 +12,7 @@ import freechips.rocketchip.devices.debug.{ExportDebug, DebugAttachParams}
 import freechips.rocketchip.tile._
 import freechips.rocketchip.rocket._
 import freechips.rocketchip.diplomacy.SynchronousCrossing
+import crypto.aes._
 
 class WithSecureCore extends Config((site, here, up) => {
   case XLen => 64
@@ -48,7 +49,7 @@ class WithSecureCore extends Config((site, here, up) => {
 })
 
 class SecureRocketConfig extends Config(
-  new freechips.rocketchip.subsystem.WithNoSlavePort ++
+  new WithAES ++
   new WithSecureCore ++
   new chipyard.config.AbstractConfig
 )

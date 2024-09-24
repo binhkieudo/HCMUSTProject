@@ -14,11 +14,16 @@ import sifive.fpgashells.shell.DesignKey
 import testchipip.{CustomBootPinKey, SerialTLKey}
 
 import scala.sys.process._
+import crypto.aes._
 
 class WithDefaultPeripherals extends Config((site, here, up) => {
   case PeripheryUARTKey => List(UARTParams(address = BigInt(0x64000000L)))
   case PeripherySPIKey => List(SPIParams(rAddress = BigInt(0x64001000L)))
-  case PeripheryGPIOKey => List(GPIOParams(address = BigInt(0x64002000L), width = 24))
+  case PeripheryGPIOKey => List(GPIOParams(address = BigInt(0x64002000L), width = 4))
+})
+
+class WithCryptoCores extends Config((site, here, up) => {
+  case AESKey => Some(AESParams(address = BigInt(0x70000000L)))
 })
 
 class WithSystemModifications extends Config((site, here, up) => {
@@ -61,6 +66,7 @@ class WithArty100TTweaks extends Config(
   new WithSPIIOPassthrough ++
   new WithTLIOPassthrough ++
   // Other configurations
+  new WithCryptoCores ++
   new WithDefaultPeripherals ++
   new WithSystemModifications ++
   new testchipip.WithSerialTLWidth(32) ++
