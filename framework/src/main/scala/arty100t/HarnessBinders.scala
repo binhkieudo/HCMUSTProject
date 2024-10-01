@@ -9,7 +9,7 @@ import freechips.rocketchip.devices.debug.HasPeripheryDebug
 import freechips.rocketchip.tilelink.TLBundle
 import freechips.rocketchip.util.HeterogeneousBag
 import sifive.blocks.devices.gpio.{GPIOPortIO, HasPeripheryGPIOModuleImp}
-import sifive.blocks.devices.spi.{HasPeripherySPI, SPIPortIO}
+import sifive.blocks.devices.spi.{HasPeripherySPI, SPIPortIO, HasPeripherySPIFlashModuleImp}
 import sifive.blocks.devices.uart.{HasPeripheryUARTModuleImp, UARTPortIO}
 import testchipip._
 
@@ -17,7 +17,10 @@ import testchipip._
 class WithArty100TUARTHarnessBinder extends OverrideHarnessBinder({
   (system: HasPeripheryUARTModuleImp, th: BaseModule, ports: Seq[UARTPortIO]) => {
     th match {
-      case ath: Arty100TDDRHarnessImp => ath.athOuter.io_uart_bb.bundle <> ports.head
+      case ath: Arty100TDDRHarnessImp => {
+        ath.athOuter.io_uart_bb.bundle <> ports.head
+        ath.athOuter.io_uart_bb2.bundle <> ports.last
+      }
     }
   }
 })
@@ -27,6 +30,15 @@ class WithArty100TSPISDCardHarnessBinder extends OverrideHarnessBinder({
   (system: HasPeripherySPI, th: BaseModule, ports: Seq[SPIPortIO]) => {
     th match {
       case ath: Arty100TDDRHarnessImp => ath.athOuter.io_spi_bb.bundle <> ports.head
+    }
+  }
+})
+
+/*** Flash ***/
+class WithArty100TSPIFlashHarnessBinder extends OverrideHarnessBinder({
+  (system: HasPeripherySPIFlashModuleImp, th: BaseModule, ports: Seq[SPIPortIO]) => {
+    th match {
+      case ath: Arty100TDDRHarnessImp => ath.athOuter.io_flash_bb.bundle <> ports.head
     }
   }
 })

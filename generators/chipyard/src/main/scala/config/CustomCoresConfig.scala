@@ -20,20 +20,23 @@ class WithSecureCore extends Config((site, here, up) => {
     val coreconfig = RocketTileParams(
       core = RocketCoreParams(
         useVM = false,
-        fpu = Some(FPUParams(divSqrt = false)),
+        fpu = Some(FPUParams(
+          fLen = 32,
+          divSqrt = false)),
         mulDiv = Some(MulDivParams(mulUnroll = 8))),
       btb = None,
       dcache = Some(DCacheParams(
         rowBits = site(SystemBusKey).beatBits,
-        nSets = 128, // 32Kb scratchpad
+        nSets = 256, // 16KB
         nWays = 1,
         nTLBSets = 1,
         nTLBWays = 4,
         nMSHRs = 0,
-        blockBytes = site(CacheBlockBytes))),
+        blockBytes = site(CacheBlockBytes),
+        scratch = Some(0x80000000L))),
       icache = Some(ICacheParams(
         rowBits = site(SystemBusKey).beatBits,
-        nSets = 64,
+        nSets = 64, // 4KB
         nWays = 1,
         nTLBSets = 1,
         nTLBWays = 4,
@@ -50,6 +53,9 @@ class WithSecureCore extends Config((site, here, up) => {
 
 class SecureRocketConfig extends Config(
   new WithAES ++
+  new freechips.rocketchip.subsystem.WithIncoherentBusTopology ++ // use incoherent bus topology
+  new freechips.rocketchip.subsystem.WithNBanks(0) ++             // remove L2$
+  new freechips.rocketchip.subsystem.WithNoMemPort ++             // remove backing memory  
   new WithSecureCore ++
   new chipyard.config.AbstractConfig
 )

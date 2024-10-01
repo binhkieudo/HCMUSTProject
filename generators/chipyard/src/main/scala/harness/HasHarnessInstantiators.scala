@@ -83,7 +83,9 @@ trait HasHarnessInstantiators {
 
     withClockAndReset (harnessBinderClock, harnessBinderReset) {
       lazyDuts.zipWithIndex.foreach {
-        case (d: HasIOBinders, i: Int) => ApplyHarnessBinders(this, d.lazySystem, d.portMap)(chipParameters(i))
+        case (d: HasIOBinders, i: Int) => {
+          ApplyHarnessBinders(this, d.lazySystem, d.portMap)(chipParameters(i))
+        }
         case _ =>
       }
     }

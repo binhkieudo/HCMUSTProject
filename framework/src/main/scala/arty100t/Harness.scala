@@ -9,7 +9,7 @@ import freechips.rocketchip.subsystem.SystemBusKey
 import freechips.rocketchip.tilelink._
 import org.chipsalliance.cde.config.Parameters
 import sifive.blocks.devices.gpio.{GPIOPortIO, PeripheryGPIOKey}
-import sifive.blocks.devices.spi.{PeripherySPIKey, SPIPortIO}
+import sifive.blocks.devices.spi.{PeripherySPIKey, SPIPortIO, PeripherySPIFlashKey}
 import sifive.blocks.devices.uart._
 import sifive.fpgashells.clocks.{ClockGroup, ClockSinkNode, PLLFactoryKey, ResetWrangler}
 import sifive.fpgashells.ip.xilinx.IBUF
@@ -45,8 +45,12 @@ class Arty100TDDRHarness(override implicit val p: Parameters) extends Arty100TSh
   val jtagModule = dp(JTAGDebugOverlayKey).head.place(JTAGDebugDesignInput()).overlayOutput.jtag
 
   /*** UART ***/
-  val io_uart_bb = BundleBridgeSource(() => new UARTPortIO(dp(PeripheryUARTKey).headOption.getOrElse(UARTParams(0))))
+  val io_uart_bb  = BundleBridgeSource(() => new UARTPortIO(dp(PeripheryUARTKey).head))
   val uartOverlay = dp(UARTOverlayKey).head.place(UARTDesignInput(io_uart_bb))
+
+  /*** UART ***/
+  val io_uart_bb2  = BundleBridgeSource(() => new UARTPortIO(dp(PeripheryUARTKey).last))
+  val uartOverlay2 = dp(UARTOverlayKey).last.place(UARTDesignInput(io_uart_bb2))
 
   /*** GPIO ***/
   val io_gpio_bb = dp(PeripheryGPIOKey).map(p => BundleBridgeSource(() => (new GPIOPortIO(p))))
@@ -57,6 +61,10 @@ class Arty100TDDRHarness(override implicit val p: Parameters) extends Arty100TSh
   /*** SDIO ***/
   val io_spi_bb = BundleBridgeSource(() => (new SPIPortIO(dp(PeripherySPIKey).head)))
   dp(SPIOverlayKey).head.place(SPIDesignInput(dp(PeripherySPIKey).head, io_spi_bb))
+
+  /*** Flash ***/
+  val io_flash_bb = BundleBridgeSource(() => (new SPIPortIO(dp(PeripherySPIFlashKey).head)))
+  dp(SPIFlashOverlayKey).head.place(SPIFlashDesignInput(io_flash_bb))
 
   // Module implementation
   override lazy val module = new Arty100TDDRHarnessImp(this)

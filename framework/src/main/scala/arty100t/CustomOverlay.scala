@@ -5,7 +5,7 @@ import freechips.rocketchip.diplomacy.{AddressSet, BundleBridgeSource, InModuleB
 import org.chipsalliance.cde.config.Field
 import sifive.fpgashells.clocks.{ClockGroup, ClockSinkNode, ClockSinkParameters, ClockSourceNode}
 import sifive.fpgashells.devices.xilinx.xilinxarty100tmig.{XilinxArty100TMIG, XilinxArty100TMIGPads, XilinxArty100TMIGParams}
-import sifive.fpgashells.shell.xilinx.{GPIOXilinxPlacedOverlay, JTAGDebugXilinxPlacedOverlay, LEDXilinxPlacedOverlay, SDIOXilinxPlacedOverlay, SPIFlashXilinxPlacedOverlay, SingleEndedClockInputXilinxPlacedOverlay, UARTXilinxPlacedOverlay}
+import sifive.fpgashells.shell.xilinx.{GPIOXilinxPlacedOverlay, JTAGDebugXilinxPlacedOverlay, LEDXilinxPlacedOverlay, SDIOXilinxPlacedOverlay, SPIFlashXilinxPlacedOverlay, MySPIFlashPlacedOverlay, SingleEndedClockInputXilinxPlacedOverlay, UARTXilinxPlacedOverlay}
 import sifive.fpgashells.shell.{CTSResetDesignInput, CTSResetPlacedOverlay, CTSResetShellInput, CTSResetShellPlacer, ClockInputDesignInput, ClockInputShellInput, ClockInputShellPlacer, DDRDesignInput, DDROverlayOutput, DDRPlacedOverlay, DDRShellInput, DDRShellPlacer, GPIODesignInput, GPIOShellInput, GPIOShellPlacer, IOPin, JTAGDebugDesignInput, JTAGDebugShellInput, JTAGDebugShellPlacer, LEDDesignInput, LEDShellInput, LEDShellPlacer, SPIDesignInput, SPIFlashDesignInput, SPIFlashShellInput, SPIFlashShellPlacer, SPIShellInput, SPIShellPlacer, UARTDesignInput, UARTShellInput, UARTShellPlacer}
 
 /* =============================================================
@@ -91,26 +91,14 @@ class CTSResetArtyShellPlacer(val shell: Arty100TShellCustomOverlays, val shellI
 }
 
 /* =============================================================
-======================= LED Status =============================
-===============================================================*/
-object LEDStatusArtyPinConstraints{
-  val pins = Seq("H5", "J5", "T9")
-}
-class LEDStatusPlacedOverlay(val shell: Arty100TShellCustomOverlays, name: String, val designInput: LEDDesignInput, val shellInput: LEDShellInput)
-  extends LEDXilinxPlacedOverlay(name, designInput, shellInput, packagePin = Some(LEDStatusArtyPinConstraints.pins(shellInput.number)))
-class LEDStatusArtyShellPlacer(val shell: Arty100TShellCustomOverlays, val shellInput: LEDShellInput)(implicit val valName: ValName)
-  extends LEDShellPlacer[Arty100TShellCustomOverlays] {
-  def place(designInput: LEDDesignInput) = new LEDStatusPlacedOverlay(shell, valName.name, designInput, shellInput)
-}
-
-/* =============================================================
 ======================= UART =============================
 ===============================================================*/
 class UARTArtyPlacedOverlay(val shell: Arty100TShellCustomOverlays, name: String, val designInput: UARTDesignInput, val shellInput: UARTShellInput)
   extends UARTXilinxPlacedOverlay(name, designInput, shellInput, false)
 {
   shell { InModuleBody {
-    val packagePinsWithPackageIOs = Seq(("A9", IOPin(io.rxd)),
+    val packagePinsWithPackageIOs = Seq(
+      ("A9", IOPin(io.rxd)),
       ("D10", IOPin(io.txd)))
 
     packagePinsWithPackageIOs foreach { case (pin, io) => {
@@ -125,38 +113,29 @@ class UARTArtyShellPlacer(val shell: Arty100TShellCustomOverlays, val shellInput
   def place(designInput: UARTDesignInput) = new UARTArtyPlacedOverlay(shell, valName.name, designInput, shellInput)
 }
 
-
-/* =============================================================
-============================= JTAG =============================
-===============================================================*/
-// PMOD JD used for JTAG
-class JTAGDebugArtyPlacedOverlay(val shell: Arty100TShellCustomOverlays, name: String, val designInput: JTAGDebugDesignInput, val shellInput: JTAGDebugShellInput)
-  extends JTAGDebugXilinxPlacedOverlay(name, designInput, shellInput)
+// JD
+class UART2ArtyPlacedOverlay(val shell: Arty100TShellCustomOverlays, name: String, val designInput: UARTDesignInput, val shellInput: UARTShellInput)
+  extends UARTXilinxPlacedOverlay(name, designInput, shellInput, false)
 {
   shell { InModuleBody {
-    shell.sdc.addClock("JTCK", IOPin(io.jtag_TCK), 10)
-    shell.sdc.addGroup(clocks = Seq("JTCK"))
-    shell.xdc.clockDedicatedRouteFalse(IOPin(io.jtag_TCK))
-    val packagePinsWithPackageIOs = Seq(("F3", IOPin(io.jtag_TDO)),  //pin JD-3
-      ("D4", IOPin(io.jtag_TDI)),  //pin JD-0
-      ("D3", IOPin(io.jtag_TMS)),  //pin JD-1
-      ("F4", IOPin(io.jtag_TCK)),  //pin JD-2
-      ("H2", IOPin(io.srst_n)))
+    val packagePinsWithPackageIOs = Seq(
+      ("D2", IOPin(io.rxd)),
+      ("H2", IOPin(io.txd)))
 
     packagePinsWithPackageIOs foreach { case (pin, io) => {
       shell.xdc.addPackagePin(io, pin)
       shell.xdc.addIOStandard(io, "LVCMOS33")
-      shell.xdc.addPullup(io)
+      shell.xdc.addIOB(io)
     } }
   } }
 }
-class JTAGDebugArtyShellPlacer(val shell: Arty100TShellCustomOverlays, val shellInput: JTAGDebugShellInput)(implicit val valName: ValName)
-  extends JTAGDebugShellPlacer[Arty100TShellCustomOverlays] {
-  def place(designInput: JTAGDebugDesignInput) = new JTAGDebugArtyPlacedOverlay(shell, valName.name, designInput, shellInput)
+class UART2ArtyShellPlacer(val shell: Arty100TShellCustomOverlays, val shellInput: UARTShellInput)(implicit val valName: ValName)
+  extends UARTShellPlacer[Arty100TShellCustomOverlays] {
+  def place(designInput: UARTDesignInput) = new UART2ArtyPlacedOverlay(shell, valName.name, designInput, shellInput)
 }
 
 /* =============================================================
-============================= SDIO =============================
+======================== SDIO (JA) =============================
 ===============================================================*/
 class SDIOArtyPlacedOverlay(val shell: Arty100TShellCustomOverlays, name: String, val designInput: SPIDesignInput, val shellInput: SPIShellInput)
   extends SDIOXilinxPlacedOverlay(name, designInput, shellInput)
@@ -188,17 +167,17 @@ class SDIOArtyShellPlacer(val shell: Arty100TShellCustomOverlays, val shellInput
 ======================= Flash (JB) =============================
 ===============================================================*/
 class SPIFlashArtyPlacedOverlay(val shell: Arty100TShellCustomOverlays, name: String, val designInput: SPIFlashDesignInput, val shellInput: SPIFlashShellInput)
-  extends SPIFlashXilinxPlacedOverlay(name, designInput, shellInput)
+  extends MySPIFlashPlacedOverlay(name, designInput, shellInput)
 {
 
   shell { InModuleBody {
     val packagePinsWithPackageIOs = Seq(
-      ("E15", IOPin(io.qspi_cs)),     // PA0
-      ("E16", IOPin(io.qspi_dq(0))),  // PA1
-      ("D15", IOPin(io.qspi_dq(1))),  // PA2
-      ("C15", IOPin(io.qspi_sck)),    // PA3
-      ("K15", IOPin(io.qspi_dq(2))),  // PA8
-      ("J15", IOPin(io.qspi_dq(3))))  // PA9
+      ("E15", IOPin(io.qspi_cs)),     // JB0
+      ("E16", IOPin(io.qspi_dq(0))),  // JB1
+      ("D15", IOPin(io.qspi_dq(1))),  // JB2
+      ("C15", IOPin(io.qspi_sck)),    // JB3
+      ("K15", IOPin(io.qspi_dq(2))),  // JB6
+      ("J15", IOPin(io.qspi_dq(3))))  // JB7
 
     packagePinsWithPackageIOs foreach { case (pin, io) => {
       shell.xdc.addPackagePin(io, pin)
@@ -213,6 +192,37 @@ class SPIFlashArtyShellPlacer(val shell: Arty100TShellCustomOverlays, val shellI
   extends SPIFlashShellPlacer[Arty100TShellCustomOverlays] {
   def place(designInput: SPIFlashDesignInput) = new SPIFlashArtyPlacedOverlay(shell, valName.name, designInput, shellInput)
 }
+
+/* =============================================================
+======================== JTAG (JD) =============================
+===============================================================*/
+// PMOD JD used for JTAG
+class JTAGDebugArtyPlacedOverlay(val shell: Arty100TShellCustomOverlays, name: String, val designInput: JTAGDebugDesignInput, val shellInput: JTAGDebugShellInput)
+  extends JTAGDebugXilinxPlacedOverlay(name, designInput, shellInput)
+{
+  shell { InModuleBody {
+    shell.sdc.addClock("JTCK", IOPin(io.jtag_TCK), 10)
+    shell.sdc.addGroup(clocks = Seq("JTCK"))
+    shell.xdc.clockDedicatedRouteFalse(IOPin(io.jtag_TCK))
+    val packagePinsWithPackageIOs = Seq(
+      ("D4", IOPin(io.jtag_TDI)),  //pin JD-3
+      ("D3", IOPin(io.jtag_TMS)),  //pin JD-0
+      ("F4", IOPin(io.jtag_TCK)),  //pin JD-1
+      ("F3", IOPin(io.jtag_TDO)),  //pin JD-2
+      ("E2", IOPin(io.srst_n)))
+
+    packagePinsWithPackageIOs foreach { case (pin, io) => {
+      shell.xdc.addPackagePin(io, pin)
+      shell.xdc.addIOStandard(io, "LVCMOS33")
+      shell.xdc.addPullup(io)
+    } }
+  } }
+}
+class JTAGDebugArtyShellPlacer(val shell: Arty100TShellCustomOverlays, val shellInput: JTAGDebugShellInput)(implicit val valName: ValName)
+  extends JTAGDebugShellPlacer[Arty100TShellCustomOverlays] {
+  def place(designInput: JTAGDebugDesignInput) = new JTAGDebugArtyPlacedOverlay(shell, valName.name, designInput, shellInput)
+}
+
 /* =============================================================
 ========================= GPIO =================================
 ===============================================================*/
