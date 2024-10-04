@@ -1,0 +1,14 @@
+[
+	{
+		"class":"sifive.enterprise.firrtl.MarkDUTAnnotation",
+		"target":"~Arty100TDDRHarness|ChipTop"
+	},
+	{
+		"class": "sifive.enterprise.firrtl.TestHarnessHierarchyAnnotation",
+		"filename": "/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/model_module_hierarchy.json"
+	},
+	{
+		"class": "sifive.enterprise.firrtl.ModuleHierarchyAnnotation",
+		"filename": "/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/top_module_hierarchy.json"
+	}
+]

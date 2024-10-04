@@ -27,7 +27,7 @@ class WithSecureCore extends Config((site, here, up) => {
       btb = None,
       dcache = Some(DCacheParams(
         rowBits = site(SystemBusKey).beatBits,
-        nSets = 256, // 16KB
+        nSets = 32, // 16KB
         nWays = 1,
         nTLBSets = 1,
         nTLBWays = 4,
@@ -36,7 +36,7 @@ class WithSecureCore extends Config((site, here, up) => {
         scratch = Some(0x80000000L))),
       icache = Some(ICacheParams(
         rowBits = site(SystemBusKey).beatBits,
-        nSets = 64, // 4KB
+        nSets = 16, // 4KB
         nWays = 1,
         nTLBSets = 1,
         nTLBWays = 4,
@@ -53,9 +53,9 @@ class WithSecureCore extends Config((site, here, up) => {
 
 class SecureRocketConfig extends Config(
   new WithAES ++
-  new freechips.rocketchip.subsystem.WithIncoherentBusTopology ++ // use incoherent bus topology
-  new freechips.rocketchip.subsystem.WithNBanks(0) ++             // remove L2$
-  new freechips.rocketchip.subsystem.WithNoMemPort ++             // remove backing memory  
+  // new freechips.rocketchip.subsystem.WithIncoherentBusTopology ++ // use incoherent bus topology
+  // new freechips.rocketchip.subsystem.WithNBanks(0) ++             // remove L2$
+  // new freechips.rocketchip.subsystem.WithNoMemPort ++             // remove backing memory  
   new WithSecureCore ++
   new chipyard.config.AbstractConfig
 )

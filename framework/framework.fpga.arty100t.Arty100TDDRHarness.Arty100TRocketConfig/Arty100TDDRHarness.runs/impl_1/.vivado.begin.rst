@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="binhkieudo" Host="binhkieudo-ASUS" Pid="365970" HostCore="16" HostMemory="32262056">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="binhkieudo" Host="binhkieudo-ASUS" Pid="439582" HostCore="16" HostMemory="32262056">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="binhkieudo" Host="binhkieudo-ASUS" Pid="509499" HostCore="16" HostMemory="32262056">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="binhkieudo" Host="binhkieudo-ASUS" Pid="584019" HostCore="16" HostMemory="32262056">
+    </Process>
+</ProcessHandle>

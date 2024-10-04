@@ -1,0 +1,56 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Thu Oct  3 15:42:32 2024
+| Host         : binhkieudo-ASUS running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_drc -file Arty100TDDRHarness_drc_routed.rpt -pb Arty100TDDRHarness_drc_routed.pb -rpx Arty100TDDRHarness_drc_routed.rpx
+| Design       : Arty100TDDRHarness
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Fully Routed
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 1
++-----------+----------+-------------------+------------+
+| Rule      | Severity | Description       | Violations |
++-----------+----------+-------------------+------------+
+| RTSTAT-10 | Warning  | No routable loads | 1          |
++-----------+----------+-------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+RTSTAT-10#1 Warning
+No routable loads  
+28 net(s) have no routable loads. The problem bus(es) and/or net(s) are chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[0].Sbox_func/s_inv[0],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[0].Sbox_func/s_inv[2],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[0].Sbox_func/s_inv[3],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[0].Sbox_func/s_inv[4],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[1].Sbox_func/s_inv[0],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[1].Sbox_func/s_inv[2],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[1].Sbox_func/s_inv[3],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[1].Sbox_func/s_inv[4],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[2].Sbox_func/s_inv[0],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[2].Sbox_func/s_inv[2],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[2].Sbox_func/s_inv[3],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[3].Sbox_func/s_inv[0],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[3].Sbox_func/s_inv[2],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[3].Sbox_func/s_inv[3],
+chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[3].Sbox_func/s_inv[4]
+ (the first 15 of 28 listed nets/buses).
+Related violations: <none>
+
+

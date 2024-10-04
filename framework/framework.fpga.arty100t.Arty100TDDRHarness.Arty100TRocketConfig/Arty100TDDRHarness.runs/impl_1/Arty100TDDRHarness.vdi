@@ -1,0 +1,944 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Oct  3 15:41:44 2024
+# Process ID: 584062
+# Current directory: /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1
+# Command line: vivado -log Arty100TDDRHarness.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Arty100TDDRHarness.tcl -notrace
+# Log file: /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/Arty100TDDRHarness.vdi
+# Journal file: /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/vivado.jou
+# Running On        :binhkieudo-ASUS
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 20.04.6 LTS
+# Processor Detail  :AMD Ryzen 7 4800H with Radeon Graphics
+# CPU Frequency     :1400.000 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :33036 MB
+# Swap memory       :98302 MB
+# Total Virtual     :131339 MB
+# Available Virtual :119036 MB
+#-----------------------------------------------------------
+source Arty100TDDRHarness.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1464.367 ; gain = 52.836 ; free physical = 8986 ; free virtual = 113110
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/obj/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/cad/Xilinx/Vivado/2024.1/data/ip'.
+Command: link_design -top Arty100TDDRHarness -part xc7a100tcsg324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Device 21-9227] Part: xc7a100tcsg324-1 does not have CEAM library.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1829.188 ; gain = 0.000 ; free physical = 8619 ; free virtual = 112743
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/obj/ip/harnessSysPLL/harnessSysPLL_board.xdc] for cell 'harnessSysPLL/inst'
+Finished Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/obj/ip/harnessSysPLL/harnessSysPLL_board.xdc] for cell 'harnessSysPLL/inst'
+Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/obj/ip/harnessSysPLL/harnessSysPLL.xdc] for cell 'harnessSysPLL/inst'
+Finished Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/obj/ip/harnessSysPLL/harnessSysPLL.xdc] for cell 'harnessSysPLL/inst'
+Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-config.xdc]
+Finished Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-config.xdc]
+Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:9]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK100MHZ]'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:9]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'jd_2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:10]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports jd_2]'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:10]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'sw_0'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw_1'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw_2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw_3'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led0_b'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led0_g'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led0_r'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led1_b'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led1_g'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led1_r'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led2_b'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led2_g'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led2_r'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_0'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_1'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led_3'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_0'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_1'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_3'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ja_0'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ja_1'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ja_2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ja_3'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ja_4'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ja_5'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ja_6'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ja_7'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jc_0'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jc_1'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jc_2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jc_3'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jc_4'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jc_5'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jc_6'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:78]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:78]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jc_7'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:79]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:79]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jd_0'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:83]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jd_1'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:84]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:84]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jd_2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jd_4'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jd_5'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jd_6'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'uart_rxd_out'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'uart_txd_in'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:95]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_0'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:117]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:117]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_1'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:118]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:118]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:119]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:119]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_3'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:120]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:120]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_4'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:121]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:121]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_5'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:122]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:122]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_6'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:123]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:123]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_7'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:124]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:124]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_8'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:125]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:125]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_9'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:126]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:126]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_10'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:127]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:127]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_11'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:128]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:128]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_12'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:129]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:129]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_13'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:130]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:130]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_14'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:135]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:135]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_15'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:136]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:136]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_16'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:137]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:137]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_17'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:138]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:138]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_18'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:139]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:139]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_io_19'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:140]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:140]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_miso'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:173]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:173]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_mosi'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:174]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:174]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_sck'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:175]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:175]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_ss'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:176]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:176]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ck_rst'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:188]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:188]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'qspi_sck'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:214]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:214]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'qspi_sck'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:215]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports qspi_sck]'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:215]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'qspi_cs'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:216]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:216]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'qspi_dq_0'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:217]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:217]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'qspi_dq_1'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:218]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:218]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'qspi_dq_2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:219]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:219]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'qspi_dq_3'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:220]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:220]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jd_2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -include_generated_clocks -of_objects [get_ports jd_2]'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Resolution: Verify the create_clock command was called to create the clock object before it is referenced.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+get_clocks: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2474.574 ; gain = 538.766 ; free physical = 8097 ; free virtual = 112220
+WARNING: [Vivado 12-508] No pins matched 'ip_mmcm/inst/mmcm_adv_inst/CLKOUT0'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -of_objects [get_pins ip_mmcm/inst/mmcm_adv_inst/CLKOUT0]'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Resolution: Verify the create_clock command was called to create the clock object before it is referenced.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+WARNING: [Vivado 12-508] No pins matched 'ip_mmcm/inst/mmcm_adv_inst/CLKOUT1'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -of_objects [get_pins ip_mmcm/inst/mmcm_adv_inst/CLKOUT1]'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Resolution: Verify the create_clock command was called to create the clock object before it is referenced.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+WARNING: [Vivado 12-508] No pins matched 'ip_mmcm/inst/mmcm_adv_inst/CLKOUT2'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -of_objects [get_pins ip_mmcm/inst/mmcm_adv_inst/CLKOUT2]'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Resolution: Verify the create_clock command was called to create the clock object before it is referenced.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks -include_generated_clocks -of_objects [get_ports jd_2]]'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group '. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks -of_objects [get_pins ip_mmcm/inst/mmcm_adv_inst/CLKOUT0]]'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group '. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [list [get_clocks -of_objects [get_pins ip_mmcm/inst/mmcm_adv_inst/CLKOUT1]] [get_clocks -of_objects [get_pins ip_mmcm/inst/mmcm_adv_inst/CLKOUT2]]]'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group '. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Constraints 18-4644] set_clock_groups: All clock groups specified are empty. Please specify atleast one clock group which is not empty. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc:233]
+Finished Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/fpga/fpga-shells/xilinx/arty_a7_100/constraints/arty-master.xdc]
+Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig.shell.sdc]
+Finished Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig.shell.sdc]
+Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig.shell.xdc]
+WARNING: [Vivado 12-584] No ports matched 'jtag_jtag_TCK'. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig.shell.xdc:7]
+WARNING: [Vivado 12-507] No nets matched ''. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig.shell.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig.shell.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig.shell.xdc]
+Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/obj/ip/harnessSysPLL/harnessSysPLL_late.xdc] for cell 'harnessSysPLL/inst'
+Finished Parsing XDC File [/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/obj/ip/harnessSysPLL/harnessSysPLL_late.xdc] for cell 'harnessSysPLL/inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2478.543 ; gain = 0.000 ; free physical = 8081 ; free virtual = 112204
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+16 Infos, 90 Warnings, 88 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2478.543 ; gain = 997.332 ; free physical = 8076 ; free virtual = 112199
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.59 . Memory (MB): peak = 2494.574 ; gain = 16.031 ; free physical = 8070 ; free virtual = 112194
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+Ending Cache Timing Information Task | Checksum: 1ba795962
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2514.418 ; gain = 19.844 ; free physical = 8070 ; free virtual = 112194
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1ba795962
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1ba795962
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Phase 1 Initialization | Checksum: 1ba795962
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 1ba795962
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 1ba795962
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1ba795962
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+
+Phase 3 Retarget
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 295f47225
+
+Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Retarget | Checksum: 295f47225
+INFO: [Opt 31-389] Phase Retarget created 63 cells and removed 91 cells
+INFO: [Opt 31-1021] In phase Retarget, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 205909f26
+
+Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Constant propagation | Checksum: 205909f26
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 164 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 32 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 1ce9be8fe
+
+Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Sweep | Checksum: 1ce9be8fe
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 6 cells
+INFO: [Opt 31-1021] In phase Sweep, 32 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 1ce9be8fe
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+BUFG optimization | Checksum: 1ce9be8fe
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 1ce9be8fe
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Shift Register Optimization | Checksum: 1ce9be8fe
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 1ce9be8fe
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Post Processing Netlist | Checksum: 1ce9be8fe
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 28 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 1bfd013d1
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 1bfd013d1
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Phase 9 Finalization | Checksum: 1bfd013d1
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              63  |              91  |                                              1  |
+|  Constant propagation         |               0  |             164  |                                             32  |
+|  Sweep                        |               0  |               6  |                                             32  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             28  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 1bfd013d1
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 1bfd013d1
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1bfd013d1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+Ending Netlist Obfuscation Task | Checksum: 1bfd013d1
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2819.285 ; gain = 0.000 ; free physical = 7765 ; free virtual = 111884
+INFO: [Common 17-83] Releasing license: Implementation
+39 Infos, 90 Warnings, 88 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+INFO: [Vivado 12-24828] Executing command : report_drc -file Arty100TDDRHarness_drc_opted.rpt -pb Arty100TDDRHarness_drc_opted.pb -rpx Arty100TDDRHarness_drc_opted.rpx
+Command: report_drc -file Arty100TDDRHarness_drc_opted.rpt -pb Arty100TDDRHarness_drc_opted.pb -rpx Arty100TDDRHarness_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/Arty100TDDRHarness_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2833.312 ; gain = 0.000 ; free physical = 7760 ; free virtual = 111879
+Wrote PlaceDB: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2833.312 ; gain = 0.000 ; free physical = 7759 ; free virtual = 111879
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2833.312 ; gain = 0.000 ; free physical = 7759 ; free virtual = 111879
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2833.312 ; gain = 0.000 ; free physical = 7759 ; free virtual = 111879
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2833.312 ; gain = 0.000 ; free physical = 7759 ; free virtual = 111879
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2833.312 ; gain = 0.000 ; free physical = 7759 ; free virtual = 111879
+Write Physdb Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2833.312 ; gain = 0.000 ; free physical = 7759 ; free virtual = 111879
+INFO: [Common 17-1381] The checkpoint '/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/Arty100TDDRHarness_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7750 ; free virtual = 111870
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 18d6cfd47
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7750 ; free virtual = 111870
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7750 ; free virtual = 111870
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 18d6cfd47
+
+Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7744 ; free virtual = 111864
+
+Phase 1.3 Build Placer Netlist Model
+WARNING: [Place 30-2953] Timing driven mode will be turned off because no critical terminals were found.
+Phase 1.3 Build Placer Netlist Model | Checksum: 1fe0f1f4f
+
+Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7744 ; free virtual = 111863
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1fe0f1f4f
+
+Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7744 ; free virtual = 111863
+Phase 1 Placer Initialization | Checksum: 1fe0f1f4f
+
+Time (s): cpu = 00:00:00.4 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7744 ; free virtual = 111863
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1fe0f1f4f
+
+Time (s): cpu = 00:00:00.4 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7743 ; free virtual = 111863
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1fe0f1f4f
+
+Time (s): cpu = 00:00:00.4 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7743 ; free virtual = 111863
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1fe0f1f4f
+
+Time (s): cpu = 00:00:00.4 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7743 ; free virtual = 111863
+
+Phase 2.4 Global Placement Core
+WARNING: [Place 46-29] Timing had been disabled during Placer and, therefore, physical synthesis in Placer will be skipped.
+Phase 2.4 Global Placement Core | Checksum: 1a679d275
+
+Time (s): cpu = 00:00:00.87 ; elapsed = 00:00:00.25 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7731 ; free virtual = 111851
+Phase 2 Global Placement | Checksum: 1a679d275
+
+Time (s): cpu = 00:00:00.87 ; elapsed = 00:00:00.25 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7731 ; free virtual = 111851
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1a679d275
+
+Time (s): cpu = 00:00:00.88 ; elapsed = 00:00:00.26 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7731 ; free virtual = 111851
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 245d15b1a
+
+Time (s): cpu = 00:00:00.94 ; elapsed = 00:00:00.26 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7731 ; free virtual = 111850
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1d135b06b
+
+Time (s): cpu = 00:00:00.97 ; elapsed = 00:00:00.27 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7731 ; free virtual = 111850
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1d135b06b
+
+Time (s): cpu = 00:00:00.97 ; elapsed = 00:00:00.27 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7731 ; free virtual = 111850
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 1ffa34330
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.37 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 1ffa34330
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.37 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 1ffa34330
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.37 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+Phase 3 Detail Placement | Checksum: 1ffa34330
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.37 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+Phase 4.1 Post Commit Optimization | Checksum: 1ffa34330
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.42 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1ffa34330
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.42 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1ffa34330
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.42 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+Phase 4.3 Placer Reporting | Checksum: 1ffa34330
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.42 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.42 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1ffa34330
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.42 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+Ending Placer Task | Checksum: 11b9b8141
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.43 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7729 ; free virtual = 111849
+56 Infos, 92 Warnings, 88 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file Arty100TDDRHarness_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7716 ; free virtual = 111835
+INFO: [Vivado 12-24828] Executing command : report_utilization -file Arty100TDDRHarness_utilization_placed.rpt -pb Arty100TDDRHarness_utilization_placed.pb
+INFO: [Vivado 12-24828] Executing command : report_io -file Arty100TDDRHarness_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7731 ; free virtual = 111850
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7731 ; free virtual = 111850
+Wrote PlaceDB: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7731 ; free virtual = 111850
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7731 ; free virtual = 111850
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7730 ; free virtual = 111850
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7730 ; free virtual = 111850
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7730 ; free virtual = 111850
+Write Physdb Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7730 ; free virtual = 111850
+INFO: [Common 17-1381] The checkpoint '/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/Arty100TDDRHarness_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+
+Starting Initial Update Timing Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7707 ; free virtual = 111827
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 0.000 | TNS= 0.000 | 
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+68 Infos, 92 Warnings, 88 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2839.250 ; gain = 0.000 ; free physical = 7706 ; free virtual = 111826
+Wrote PlaceDB: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2844.148 ; gain = 4.898 ; free physical = 7706 ; free virtual = 111826
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2844.148 ; gain = 0.000 ; free physical = 7706 ; free virtual = 111826
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2844.148 ; gain = 0.000 ; free physical = 7704 ; free virtual = 111823
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2844.148 ; gain = 0.000 ; free physical = 7704 ; free virtual = 111823
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2844.148 ; gain = 0.000 ; free physical = 7703 ; free virtual = 111823
+Write Physdb Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2844.148 ; gain = 4.898 ; free physical = 7703 ; free virtual = 111823
+INFO: [Common 17-1381] The checkpoint '/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/Arty100TDDRHarness_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 1cb4598 ConstDB: 0 ShapeSum: 67fddc13 RouteDB: b1d25f96
+Post Restoration Checksum: NetGraph: c76b8545 | NumContArr: c65546d5 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 31312c154
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 2996.508 ; gain = 112.672 ; free physical = 7364 ; free virtual = 111521
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 31312c154
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 2996.508 ; gain = 112.672 ; free physical = 7364 ; free virtual = 111521
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 31312c154
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 2996.508 ; gain = 112.672 ; free physical = 7364 ; free virtual = 111521
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 20c3128b2
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111491
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 4
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 4
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 20c3128b2
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111491
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 20c3128b2
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111491
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+ Number of Nodes with overlaps = 0
+Phase 4.1 Initial Net Routing Pass | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111490
+Phase 4 Initial Routing | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111490
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+Phase 5.1 Global Iteration 0 | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111490
+Phase 5 Rip-up And Reroute | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111490
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+Phase 6.1 Delay CleanUp | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111490
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111490
+Phase 6 Delay and Skew Optimization | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111490
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+Phase 7.1 Hold Fix Iter | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111490
+Phase 7 Post Hold Fix | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111490
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7333 ; free virtual = 111490
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7332 ; free virtual = 111490
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7332 ; free virtual = 111490
+
+Phase 11 Post Process Routing
+Phase 11 Post Process Routing | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7332 ; free virtual = 111490
+
+Phase 12 Post Router Timing
+Phase 12 Post Router Timing | Checksum: 2713a5412
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7332 ; free virtual = 111490
+Total Elapsed time in route_design: 17.35 secs
+
+Phase 13 Post-Route Event Processing
+Phase 13 Post-Route Event Processing | Checksum: 97a2ccba
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7332 ; free virtual = 111490
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 97a2ccba
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:17 . Memory (MB): peak = 3027.711 ; gain = 143.875 ; free physical = 7332 ; free virtual = 111490
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+77 Infos, 92 Warnings, 88 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 3027.711 ; gain = 183.562 ; free physical = 7332 ; free virtual = 111490
+INFO: [Vivado 12-24828] Executing command : report_drc -file Arty100TDDRHarness_drc_routed.rpt -pb Arty100TDDRHarness_drc_routed.pb -rpx Arty100TDDRHarness_drc_routed.rpx
+Command: report_drc -file Arty100TDDRHarness_drc_routed.rpt -pb Arty100TDDRHarness_drc_routed.pb -rpx Arty100TDDRHarness_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/Arty100TDDRHarness_drc_routed.rpt.
+report_drc completed successfully
+INFO: [Vivado 12-24828] Executing command : report_methodology -file Arty100TDDRHarness_methodology_drc_routed.rpt -pb Arty100TDDRHarness_methodology_drc_routed.pb -rpx Arty100TDDRHarness_methodology_drc_routed.rpx
+Command: report_methodology -file Arty100TDDRHarness_methodology_drc_routed.rpt -pb Arty100TDDRHarness_methodology_drc_routed.pb -rpx Arty100TDDRHarness_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/Arty100TDDRHarness_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -report_unconstrained -file Arty100TDDRHarness_timing_summary_routed.rpt -pb Arty100TDDRHarness_timing_summary_routed.pb -rpx Arty100TDDRHarness_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Vivado 12-24838] Running report commands "report_bus_skew, report_incremental_reuse, report_route_status" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_route_status -file Arty100TDDRHarness_route_status.rpt -pb Arty100TDDRHarness_route_status.pb
+INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file Arty100TDDRHarness_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file Arty100TDDRHarness_bus_skew_routed.rpt -pb Arty100TDDRHarness_bus_skew_routed.pb -rpx Arty100TDDRHarness_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Vivado 12-24828] Executing command : report_power -file Arty100TDDRHarness_power_routed.rpt -pb Arty100TDDRHarness_power_summary_routed.pb -rpx Arty100TDDRHarness_power_routed.rpx
+Command: report_power -file Arty100TDDRHarness_power_routed.rpt -pb Arty100TDDRHarness_power_summary_routed.pb -rpx Arty100TDDRHarness_power_routed.rpx
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+97 Infos, 92 Warnings, 88 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file Arty100TDDRHarness_clock_utilization_routed.rpt
+WARNING: [Device 21-9320] Failed to find the Oracle tile group with name 'HSR_BOUNDARY_TOP'. This is required for Clock regions and Virtual grid.
+WARNING: [Device 21-2174] Failed to initialize Virtual grid.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3091.438 ; gain = 0.000 ; free physical = 7319 ; free virtual = 111458
+Wrote PlaceDB: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3091.438 ; gain = 0.000 ; free physical = 7319 ; free virtual = 111458
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3091.438 ; gain = 0.000 ; free physical = 7319 ; free virtual = 111458
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3091.438 ; gain = 0.000 ; free physical = 7319 ; free virtual = 111458
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3091.438 ; gain = 0.000 ; free physical = 7319 ; free virtual = 111458
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3091.438 ; gain = 0.000 ; free physical = 7318 ; free virtual = 111458
+Write Physdb Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3091.438 ; gain = 0.000 ; free physical = 7318 ; free virtual = 111458
+INFO: [Common 17-1381] The checkpoint '/home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/Arty100TDDRHarness_routed.dcp' has been generated.
+Command: write_bitstream -force Arty100TDDRHarness.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC RTSTAT-10] No routable loads: 28 net(s) have no routable loads. The problem bus(es) and/or net(s) are chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[1].Sbox_func/s_inv[0], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[2].Sbox_func/s_inv[0], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[3].Sbox_func/s_inv[0], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[0].Sbox_func/s_inv[0], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[1].Sbox_func/s_inv[2], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[0].Sbox_func/s_inv[2], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[3].Sbox_func/s_inv[2], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[2].Sbox_func/s_inv[2], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[2].Sbox_func/s_inv[3], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[0].Sbox_func/s_inv[3], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[3].Sbox_func/s_inv[3], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[1].Sbox_func/s_inv[3], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[3].Sbox_func/s_inv[4], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[1].Sbox_func/s_inv[4], chiptop0/system/aes/impl/Expand_Key/Key_Schedule/U_function_g/genblk1[0].Sbox_func/s_inv[4]... and (the first 15 of 28 listed).
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./Arty100TDDRHarness.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+109 Infos, 95 Warnings, 88 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 3369.766 ; gain = 278.328 ; free physical = 6975 ; free virtual = 111143
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  3 15:42:52 2024...

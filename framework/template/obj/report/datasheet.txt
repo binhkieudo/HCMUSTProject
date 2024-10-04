@@ -1,0 +1,83 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Thu Oct  3 16:03:37 2024
+| Host         : binhkieudo-ASUS running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_datasheet -file /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/obj/report/datasheet.txt
+| Design       : Arty100TDDRHarness
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Physopt postRoute
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Data Sheet Report
+
+Input Ports Setup/Hold
+
+----------+-----------------+---------+-------+---------------+---------+---------------+---------+------------------------+
+Reference | Input           | IO Reg  | Delay |     Setup(ns) | Process |      Hold(ns) | Process | Internal               |
+Clock     | Port            | Type    | Type  | to Clk (Edge) | Corner  | to Clk (Edge) | Corner  | Clock                  |
+----------+-----------------+---------+-------+---------------+---------+---------------+---------+------------------------+
+JTCK      | jtag_jtag_TDI   | FDRE    | -     |     0.884 (r) | FAST    |     2.147 (r) | SLOW    |                        |
+JTCK      | jtag_jtag_TMS   | FDPE    | -     |     0.699 (r) | FAST    |     1.598 (r) | SLOW    |                        |
+sys_clock | flash_qspi_dq_0 | FDRE    | -     |     6.773 (r) | SLOW    |    -2.455 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | flash_qspi_dq_1 | FDRE    | -     |     7.421 (r) | SLOW    |    -2.632 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | flash_qspi_dq_2 | FDRE    | -     |     8.013 (r) | SLOW    |    -2.972 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | flash_qspi_dq_3 | FDRE    | -     |     7.403 (r) | SLOW    |    -2.728 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_0     | SRL16E  | -     |     4.345 (r) | SLOW    |    -1.471 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_1     | SRL16E  | -     |     4.248 (r) | SLOW    |    -1.407 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_2     | SRL16E  | -     |     4.108 (r) | SLOW    |    -1.301 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_3     | SRL16E  | -     |     4.068 (r) | SLOW    |    -1.295 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_4     | SRL16E  | -     |     7.769 (r) | SLOW    |    -3.019 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_5     | SRL16E  | -     |     7.714 (r) | SLOW    |    -2.964 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_6     | SRL16E  | -     |     7.856 (r) | SLOW    |    -3.023 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_7     | SRL16E  | -     |     7.894 (r) | SLOW    |    -3.046 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | reset           | FDCE    | -     |     9.123 (r) | SLOW    |    -3.509 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | sdio_spi_dat_0  | FDRE    | -     |     5.253 (r) | SLOW    |    -1.848 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | uart2_rxd       | FDRE    | -     |    10.847 (r) | SLOW    |    -3.144 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | uart_rxd        | FDRE    | -     |     8.730 (r) | SLOW    |    -2.083 (r) | FAST    | clk_out1_harnessSysPLL |
+----------+-----------------+---------+-------+---------------+---------+---------------+---------+------------------------+
+
+
+Output Ports Clock-to-out
+
+----------+-----------------+-----------+-------+----------------+---------+----------------+---------+------------------------+
+Reference | Output          | IO Reg    | Delay | Max Clk (Edge) | Process | Min Clk (Edge) | Process | Internal               |
+Clock     | Port            | Type      | Type  |    to port(ns) | Corner  |    to port(ns) | Corner  | Clock                  |
+----------+-----------------+-----------+-------+----------------+---------+----------------+---------+------------------------+
+JTCK      | jtag_jtag_TDO   | FDCE      | -     |     13.519 (f) | SLOW    |      4.040 (f) | FAST    |                        |
+sys_clock | flash_qspi_cs   | FDRE      | -     |      7.351 (r) | SLOW    |      2.002 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | flash_qspi_dq_0 | FDRE      | -     |      8.526 (r) | SLOW    |      1.782 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | flash_qspi_dq_1 | FDRE      | -     |      9.584 (r) | SLOW    |      2.065 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | flash_qspi_dq_2 | FDRE      | -     |     10.203 (r) | SLOW    |      2.566 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | flash_qspi_dq_3 | FDRE      | -     |     10.340 (r) | SLOW    |      2.549 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | flash_qspi_sck  | FDRE      | -     |      7.678 (r) | SLOW    |      2.118 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_0     | FDRE      | -     |      6.422 (r) | SLOW    |      0.300 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_1     | FDRE      | -     |      6.207 (r) | SLOW    |      0.300 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_2     | FDRE      | -     |      6.531 (r) | SLOW    |      0.300 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_3     | FDRE      | -     |      6.675 (r) | SLOW    |      0.301 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_4     | FDRE      | -     |     10.038 (r) | SLOW    |      0.224 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_5     | FDRE      | -     |     10.009 (r) | SLOW    |      0.226 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_6     | FDRE      | -     |      9.487 (r) | SLOW    |      0.226 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | gpio_gpio_7     | FDRE      | -     |      9.621 (r) | SLOW    |      0.226 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | sdio_spi_clk    | FDRE (IO) | -     |      3.415 (r) | SLOW    |      0.637 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | sdio_spi_cs     | FDRE (IO) | -     |      3.429 (r) | SLOW    |      0.650 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | sdio_spi_dat_3  | FDRE (IO) | -     |      3.396 (r) | SLOW    |      0.618 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | uart2_txd       | FDSE (IO) | -     |      3.386 (r) | SLOW    |      0.610 (r) | FAST    | clk_out1_harnessSysPLL |
+sys_clock | uart_txd        | FDSE (IO) | -     |      3.571 (r) | SLOW    |      0.691 (r) | FAST    | clk_out1_harnessSysPLL |
+----------+-----------------+-----------+-------+----------------+---------+----------------+---------+------------------------+
+
+
+Setup between Clocks
+
+----------+-------------+---------------+---------+---------------+---------+---------------+---------+---------------+---------+
+Source    | Destination |  Src:Rise     | Process |  Src:Rise     | Process |  Src:Fall     | Process |  Src:Fall     | Process |
+Clock     | Clock       | Dest:Rise(ns) | Corner  | Dest:Fall(ns) | Corner  | Dest:Rise(ns) | Corner  | Dest:Fall(ns) | Corner  |
+----------+-------------+---------------+---------+---------------+---------+---------------+---------+---------------+---------+
+JTCK      | JTCK        |         8.740 | SLOW    |         3.281 | SLOW    |         7.443 | SLOW    |         3.447 | SLOW    |
+sys_clock | JTCK        |         9.562 | SLOW    |               |         |               |         |               |         |
+JTCK      | sys_clock   |        10.832 | SLOW    |               |         |               |         |               |         |
+sys_clock | sys_clock   |        18.808 | SLOW    |               |         |               |         |               |         |
+----------+-------------+---------------+---------+---------------+---------+---------------+---------+---------------+---------+
+
+

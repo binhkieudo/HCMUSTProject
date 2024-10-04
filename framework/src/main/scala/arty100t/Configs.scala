@@ -49,7 +49,7 @@ class WithSystemModifications extends Config((site, here, up) => {
   case DebugModuleKey => up(DebugModuleKey).map{ debug =>
     debug.copy(clockGate = false)
   }
-  case SerialTLKey => None
+  // case SerialTLKey => None
   case CustomBootPinKey => None
 })
 
@@ -79,12 +79,13 @@ class WithArty100TTweaks extends Config(
   new WithCryptoCores ++
   new WithDefaultPeripherals ++
   new WithSystemModifications ++
-  // new testchipip.WithSerialTLWidth(16) ++
-  // new testchipip.WithSerialTLMem (
-  //   base = BigInt(0x80000000L),
-  //   size = BigInt(0x40000000L)
-  // ) ++
-  // new testchipip.WithSerialTLBackingMemory ++
+  new testchipip.WithSerialTLWidth(4) ++
+  new testchipip.WithSerialTLMem (
+    base = BigInt(0x90000000L),
+    size = BigInt(0x10000000L),
+    isMainMemory = false
+  ) ++
+  new testchipip.WithSerialTLBackingMemory ++
   new freechips.rocketchip.subsystem.WithoutTLMonitors)
 
 class Arty100TRocketConfig extends Config(

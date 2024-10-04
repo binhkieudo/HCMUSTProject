@@ -1,0 +1,61 @@
+{
+  "peripheral" : {
+    "displayName" : "aes.At0x70000000",
+    "baseAddress" : "0x70000000",
+    "regfields" : [ {
+      "unnamedRegField0_0" : {
+        "byteOffset" : "0x0",
+        "bitOffset" : 0,
+        "bitWidth" : 1
+      }
+    }, {
+      "unnamedRegField8_0" : {
+        "byteOffset" : "0x8",
+        "bitOffset" : 0,
+        "bitWidth" : 1
+      }
+    }, {
+      "unnamedRegField10_0" : {
+        "byteOffset" : "0x10",
+        "bitOffset" : 0,
+        "bitWidth" : 1
+      }
+    }, {
+      "unnamedRegField18_0" : {
+        "byteOffset" : "0x18",
+        "bitOffset" : 0,
+        "bitWidth" : 64
+      }
+    }, {
+      "unnamedRegField20_0" : {
+        "byteOffset" : "0x20",
+        "bitOffset" : 0,
+        "bitWidth" : 64
+      }
+    }, {
+      "unnamedRegField28_0" : {
+        "byteOffset" : "0x28",
+        "bitOffset" : 0,
+        "bitWidth" : 64
+      }
+    }, {
+      "unnamedRegField30_0" : {
+        "byteOffset" : "0x30",
+        "bitOffset" : 0,
+        "bitWidth" : 64
+      }
+    }, {
+      "unnamedRegField38_0" : {
+        "byteOffset" : "0x38",
+        "bitOffset" : 0,
+        "bitWidth" : 64
+      }
+    }, {
+      "unnamedRegField40_0" : {
+        "byteOffset" : "0x40",
+        "bitOffset" : 0,
+        "bitWidth" : 64
+      }
+    } ]
+  }
+}

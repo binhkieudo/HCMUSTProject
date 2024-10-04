@@ -1,0 +1,64 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Thu Oct  3 14:04:53 2024
+| Host         : binhkieudo-ASUS running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_clocks -file /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/obj/report/clocks.txt
+| Design       : Arty100TDDRHarness
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Physopt postRoute
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Report
+
+
+Attributes
+  P: Propagated
+  G: Generated
+  A: Auto-derived
+  R: Renamed
+  V: Virtual
+  I: Inverted
+  S: Pin phase-shifted with Latency mode
+
+Clock                   Period(ns)  Waveform(ns)    Attributes  Sources
+JTCK                    100.000     {0.000 50.000}  P           {jtag_jtag_TCK}
+sys_clock               10.000      {0.000 5.000}   P           {sys_clock}
+clk_out1_harnessSysPLL  20.000      {0.000 10.000}  P,G,A       {harnessSysPLL/inst/mmcm_adv_inst/CLKOUT0}
+clkfbout_harnessSysPLL  10.000      {0.000 5.000}   P,G,A       {harnessSysPLL/inst/mmcm_adv_inst/CLKFBOUT}
+
+
+====================================================
+Generated Clocks
+====================================================
+
+Generated Clock     : clk_out1_harnessSysPLL
+Master Source       : harnessSysPLL/inst/mmcm_adv_inst/CLKIN1
+Master Clock        : sys_clock
+Edges               : {1 2 3}
+Edge Shifts(ns)     : {0.000 5.000 10.000}
+Generated Sources   : {harnessSysPLL/inst/mmcm_adv_inst/CLKOUT0}
+
+Generated Clock     : clkfbout_harnessSysPLL
+Master Source       : harnessSysPLL/inst/mmcm_adv_inst/CLKIN1
+Master Clock        : sys_clock
+Multiply By         : 1
+Generated Sources   : {harnessSysPLL/inst/mmcm_adv_inst/CLKFBOUT}
+
+
+
+====================================================
+User Uncertainty
+====================================================
+
+
+
+====================================================
+User Jitter
+====================================================
+
+Clock      Jitter(ns)
+JTCK       0.500
+sys_clock  0.500
+

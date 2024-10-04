@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Oct  3 15:41:44 2024
+# Process ID: 584062
+# Current directory: /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1
+# Command line: vivado -log Arty100TDDRHarness.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Arty100TDDRHarness.tcl -notrace
+# Log file: /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/Arty100TDDRHarness.vdi
+# Journal file: /home/binhkieudo/Workspace/tmp/HCMUSTProject/framework/generated-src/framework.fpga.arty100t.Arty100TDDRHarness.Arty100TRocketConfig/Arty100TDDRHarness.runs/impl_1/vivado.jou
+# Running On        :binhkieudo-ASUS
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 20.04.6 LTS
+# Processor Detail  :AMD Ryzen 7 4800H with Radeon Graphics
+# CPU Frequency     :1400.000 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :33036 MB
+# Swap memory       :98302 MB
+# Total Virtual     :131339 MB
+# Available Virtual :119036 MB
+#-----------------------------------------------------------
+source Arty100TDDRHarness.tcl -notrace
